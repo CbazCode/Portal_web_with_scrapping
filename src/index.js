@@ -10,6 +10,9 @@ const app = express();
 //Routes
 app.use(require('./routes'));
 
+app.use('/softeam', require('./routes/links'));
+
+
 // Settings
 app.set('port', process.env.PORT || 5000);
 app.set('views', path.join(__dirname, 'views'));
@@ -26,6 +29,7 @@ app.set('view engine', '.hbs');
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+
 
 //Global variables
 app.use((req,res,next)=>{
